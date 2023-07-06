@@ -38,6 +38,41 @@ public:
     const char* title() const override { return "Render"; };
 };
 
+class networking_error : public titled_generic_error {
+public:
+    explicit networking_error(const std::string& message)
+        : titled_generic_error(message) {}
+    const char* title() const override { return "Networking"; };
+};
+
+class sdl_error : public titled_generic_error {
+public:
+    explicit sdl_error(const std::string& message)
+        : titled_generic_error(message) {}
+    const char* title() const override { return "SDL"; };
+};
+
+class opengl_error : public titled_generic_error {
+public:
+    explicit opengl_error(const std::string& message)
+        : titled_generic_error(message) {}
+    const char* title() const override { return "OpenGL"; };
+};
+
+class dirctx_error : public titled_generic_error {
+public:
+    explicit dirctx_error(const std::string& message)
+        : titled_generic_error(message) {}
+    const char* title() const override { return "DirectX"; };
+};
+
+class vulkan_error : public titled_generic_error {
+public:
+    explicit vulkan_error(const std::string& message)
+        : titled_generic_error(message) {}
+    const char* title() const override { return "Vulkan"; };
+};
+
 
 /**
  * \brief Show an Error.
